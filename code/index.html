@@ -18,6 +18,7 @@
                 </div>
                 <div id="contenido">
                     <!--Centro-->
+                    <!--
                     <script>
                         let xsltProce = new XSLTProcessor();
                         let xmlHttPreq = new XMLHtttpRequest();
@@ -37,6 +38,28 @@
 
                         fragment = xsltProce.transformToFragment(xmlDoc, document);
                         document.getElementById("contenido").textContent = fragment;
+                    </script>
+                    -->
+                    <script>
+                        let xmlHttpReq = new XMLHtttpRequest();
+                        let xsltProce = new XSLTProcessor();
+                        let xml;
+                        let xsl;
+                        let resultDocument;
+
+                        xmlHttpReq.open("GET", "Sources/Data/obras-tienda-salo.xml", false);
+                        xmlHttpReq.send(null);
+                        xml = xmlHttpReq.responseXML;
+
+                        xmlHttpReq = new XMLHtttpRequest();
+                        xmlHttpReq.open("GET", "Sources/Data/obras-tienda-salo.xsl", false);
+                        xmlHttpReq.send(null);
+                        xsl = xmlHttpReq.responseXML;
+
+
+                        xsltProce.importStylesheet(xsl);
+                        resultDocument = xsltProce.transformToFragment(xml, document);
+                        document.getElementById("contenido").innerHTMl = resultDocument;
                     </script>
                 </div>
             </div>
