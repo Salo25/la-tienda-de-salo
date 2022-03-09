@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="index-styles.css"/>
+        <title>La tienda de Salo</title>
+    </head>
+    <body>
+            <div id="fotoCabecera">
+                <!--Imagen de cabecera-->
+            </div>
+            <div id="cuerpo">
+                <!--Cuerpo del contenido, izq info, der. submits y demas y cent. el contenido-->
+                <div id="menu">
+                    <!--Izquierda-->
+                    <p><u>Menú</u></p>
+                </div>
+                <div id="contenido">
+                    <!--Centro-->
+                    <script>
+                        let xsltProce = new XSLTProcessor();
+                        let xmlHttPreq = new XMLHtttpRequest();
+                        let xmlDoc;
+                        let fragment;
+
+
+
+                        xmlHttPreq.open("GET", "Sources/Data/obras-tienda-salo.xsl", false);
+                        xmlHttPreq.send(null);
+                        xsltProce.importStylesheet(xmlHttPreq.responseXML);
+
+                        xmlHttPreq = new XMLHtttpRequest();
+                        xmlHttPreq.open("GET", "Sources/Data/obras-tienda-salo.xml", false);
+                        xmlHttPreq.send(null);
+                        xmlDoc = xmlHttPreq.responseXML;
+
+                        fragment = xsltProce.transformToFragment(xmlDoc, document);
+                        document.getElementById("contenido").textContent = fragment;
+                    </script>
+                </div>
+            </div>
+            <div>
+                <!--Pie de pagina-->
+            </div>
+    </body>
+</html>

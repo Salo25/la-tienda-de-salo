@@ -1,0 +1,46 @@
+body {
+    margin: 0px;
+    /* background-color: aqua; */
+}
+
+#pagina {
+    width: 100%;
+    min-height: 100%;
+    margin: 0px;
+}
+
+
+
+#fotoCabecera {
+    height: 150px;
+    width: 100%;
+    margin: 0px;
+    background-color: yellow;
+}
+
+#cuerpo {
+    min-height: 85vh;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    /*align-content: stretch;*/
+    overflow-x: hidden;
+}
+
+#menu {
+    height: inherit;
+    width: 15%;
+    max-width: 15vw;
+    padding: 0px;
+    margin: 0px;
+    background-color: red;
+}
+
+#contenido {
+    height: inherit;
+    width: 85%;
+    max-width: 85vw;
+    padding: 0px;
+    margin: 0px;
+    background-color: #B3B3B2;
+}
