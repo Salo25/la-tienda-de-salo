@@ -92,9 +92,9 @@
                         xmlHttpReq.send(null);
                         xml = xmlHttpReq.responseXML;
 
-                        xmlHttpReq.open("GET", "https://salo25.github.io/la-tienda-de-salo/code/Sources/Data/obras-tienda-salo.xsl", false);
-                        xmlHttpReq.send(null);
-                        xsl = xmlHttpReq.responseXML;
+                        xslHttpReq.open("GET", "https://salo25.github.io/la-tienda-de-salo/code/Sources/Data/obras-tienda-salo.xsl", false);
+                        xslHttpReq.send(null);
+                        xsl = xslHttpReq.responseXML;
 
 
                         xsltProce.importStylesheet(xsl);
