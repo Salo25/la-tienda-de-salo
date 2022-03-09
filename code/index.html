@@ -56,7 +56,7 @@
                     <!--Izquierda-->
                     <p><u>Menú</u></p>
                 </div>
-                <div id="contenido" onload="displayResult()">
+                <div id="contenido">
                     <!--Centro-->
                     <!--
                     <script>
@@ -82,6 +82,7 @@
                     -->
                     <script>
                         let xmlHttpReq = new XMLHttpRequest();
+                        let xslHttpReq = new XMLHttpRequest();
                         let xsltProce = new XSLTProcessor();
                         let xml;
                         let xsl;
@@ -91,7 +92,6 @@
                         xmlHttpReq.send(null);
                         xml = xmlHttpReq.responseXML;
 
-                        xmlHttpReq = new XMLHttpRequest();
                         xmlHttpReq.open("GET", "https://salo25.github.io/la-tienda-de-salo/code/Sources/Data/obras-tienda-salo.xsl", false);
                         xmlHttpReq.send(null);
                         xsl = xmlHttpReq.responseXML;
