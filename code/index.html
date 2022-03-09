@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="index-styles.css"/>
         <title>La tienda de Salo</title>
 
+        <!--
         <script>
             function loadXMLDoc(filename)
             {
@@ -43,6 +44,7 @@
                 }
             }
         </script>
+        -->
     </head>
     <body>
             <div id="fotoCabecera">
@@ -78,7 +80,6 @@
                         document.getElementById("contenido").textContent = fragment;
                     </script>
                     -->
-                    <!--
                     <script>
                         let xmlHttpReq = new XMLHttpRequest();
                         let xsltProce = new XSLTProcessor();
@@ -86,12 +87,12 @@
                         let xsl;
                         let resultDocument;
 
-                        xmlHttpReq.open("GET", "Sources/Data/obras-tienda-salo.xml", false);
+                        xmlHttpReq.open("GET", "https://salo25.github.io/la-tienda-de-salo/code/Sources/Data/obras-tienda-salo.xml", false);
                         xmlHttpReq.send(null);
                         xml = xmlHttpReq.responseXML;
 
                         xmlHttpReq = new XMLHttpRequest();
-                        xmlHttpReq.open("GET", "Sources/Data/obras-tienda-salo.xsl", false);
+                        xmlHttpReq.open("GET", "https://salo25.github.io/la-tienda-de-salo/code/Sources/Data/obras-tienda-salo.xsl", false);
                         xmlHttpReq.send(null);
                         xsl = xmlHttpReq.responseXML;
 
@@ -100,7 +101,6 @@
                         resultDocument = xsltProce.transformToFragment(xml, document);
                         document.getElementById("contenido").innerHTMl = resultDocument;
                     </script>
-                    -->
                 </div>
             </div>
             <div>
